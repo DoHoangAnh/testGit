@@ -1,0 +1,30 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package bean;
+
+import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+/**
+ *
+ * @author anhdh_a05370
+ */
+@Stateless
+public class TblCandidateFacade extends AbstractFacade<TblCandidate> {
+    @PersistenceContext(unitName = "ProjectSEM4-ejbPU")
+    private EntityManager em;
+
+    @Override
+    protected EntityManager getEntityManager() {
+        return em;
+    }
+
+    public TblCandidateFacade() {
+        super(TblCandidate.class);
+    }
+    
+}
